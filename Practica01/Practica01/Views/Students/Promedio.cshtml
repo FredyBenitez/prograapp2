@@ -1,0 +1,40 @@
+﻿@model Practica01.Models.Acciones
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<center><h1>Promedio de notas</h1></center>
+<div class="color">
+    <form asp-controller="Students" asp-action="Promedio">
+        <div class="card c">
+            <h2>Laboratorios</h2>
+
+            @if (ViewBag.DatoN1V == 0)
+            {
+                <input type="text" placeholder="Nombre" asp-for="DatoN1" min="0" max="10" />
+            }else{
+                <input type="text" placeholder="Nombre" asp-for="DatoN1" value="@ViewBag.DatoN1V" class="form-control"  min="0" max="10" />
+            }
+
+            
+            @if (ViewBag.DatoN2V == 0)
+            {
+                <input type="text" placeholder="Apellido" asp-for="DatoN2"  min="0" max="10" />
+            }else{
+                <input type="text" placeholder="Apellido" asp-for="DatoN2" value="@ViewBag.DatoN2V" class="form-control"  min="0" max="10" />
+            }
+
+       
+
+            <h5>Promedio @ViewBag.VariableAEnviar</h5>
+            
+        </div>
+
+        <center><button class="btn btn-primary t">Calcular Promedio</button></center>
+        <center><h2 class="fg">Promedio final <span class="label label-default ">@ViewBag.varfinal</span></h2></center>
+         
+    </form>
+</div>
