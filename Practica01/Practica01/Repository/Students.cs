@@ -27,10 +27,18 @@ namespace Practica01.Repository
             //throw new NotImplementedException();
         }
 
+      
+
         public List<Estudiantes> GetAllStudents()
         {
             return app.Estudiantes.ToList();
             //throw new NotImplementedException();
+        }
+
+        public Estudiantes LoadInformation(Estudiantes es)
+        {
+            var listarestudiante = app.Estudiantes.Where(y=>y.Id == es.Id).FirstOrDefault();
+            return listarestudiante;
         }
 
         public void UpdateStudents(Estudiantes es)
